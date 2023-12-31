@@ -1,0 +1,63 @@
+#+title: 12/31 Rocket Minutes
+
+* Firmware
+What boards are we gonna use?
+ - STM Board
+
+Sensors:
+ - IMUs for each stage
+ - Barometer
+ - Telemetry system using some webapp
+   - Using LoRa board for tracking our distance
+ - GPS Module
+ - Multiple Gyroscopes
+   - Use kalman filtering
+   - Digital compass
+
+Modeling + Simulation:
+ - OpenRocket
+   - Asks for model parameters
+
+Motors:
+ - Using "Advanced" Control theory to control the servos
+
+Requirements:
+ - ignite a motor
+ - 2 servos
+ - pop ejection charge to deploy parachute
+ -
+
+Misc.
+ - Write our code so that we can test it on local machines
+ - SD Card to store data from each launch
+ - Quaternion shit
+ - "intelligent" event based programming
+   - faulty motor detection, etc.
+
+* Motors
+** V1
+For propulsion:
+- Use EDF instead of a motor
+  - Better for software testing
+
+For the TVC:
+- Use servos for the control system
+  - Austin has 2 precision servos
+
+*** TODO TVC Version 1
+DEADLINE: <2024-01-19 Fri>
+
+** Final Versions
+For final version using F/G class rocket motors
+ - [[https://www.apogeerockets.com/Rocket_Motors/Apogee_Medalist/29mm_Motors/Apogee_Medalist_Motor_F10-8_1pk][Apogee F10]]
+ - [[https://www.apogeerockets.com/Rocket-Motors/AeroTech-Motors/29mm-Motors-Single-Use/Aerotech-29mm-HP-SU-DMS-Motor-G12ST-P][Aerotech G12]]
+
+* Main Rocket Design
+- Gimbal design for rocket motor:
+  - [[https://cdn.discordapp.com/attachments/1191123014067175536/1191133195735928895/image.png?ex=65a4543c&is=6591df3c&hm=8314a23edcae2ec7c0f18eff8b479f1720233de434e8e371d92aca10b27f1301&][gimbal_image]]
+  - If we choose gimbal design, need steel/ceramic when we shift to rocket motors instead of EDF (shit melts)
+- Weight capped to < 3lbs
+  - For official stuff, < 3lbs to be a legal rocket
+  - Most TVCs are 700g or less
+- Long burn time (10 seconds)
+  -
